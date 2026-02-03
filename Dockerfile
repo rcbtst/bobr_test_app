@@ -19,6 +19,8 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 COPY . .
 
+RUN chmod +x /app/start.sh
+
 RUN chown -R app:app /app
 
 USER app
