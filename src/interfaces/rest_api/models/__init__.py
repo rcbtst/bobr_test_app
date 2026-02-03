@@ -1,4 +1,7 @@
-from src.interfaces.rest_api.models.task import TaskCreatRequest, TaskCreateResponse
+from src.interfaces.rest_api.models.task import (
+    TaskCreateResponse,
+    TaskCreatRequest,
+    TaskDataResponse,
+)
 
-
-__all__ = ["TaskCreatRequest", "TaskCreateResponse"]
+__all__ = ["TaskCreatRequest", "TaskCreateResponse", "TaskDataResponse"]

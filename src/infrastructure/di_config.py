@@ -4,6 +4,7 @@ from sqlalchemy.engine import URL
 from src.application.use_cases import (
     CreateTaskUseCase,
     GetNotDispatchedTasksUseCase,
+    GetTaskUseCase,
     MarkTasksAsDispatchedUseCase,
 )
 from src.application.use_cases.process_task import ProcessTaskUseCase
@@ -60,6 +61,12 @@ class ApplicationContainer(containers.DeclarativeContainer):
 
     process_task_use_case = providers.Factory(
         ProcessTaskUseCase,
+        logger=logger,
+        transaction_manager=transaction_manager,
+    )
+
+    get_task_use_case = providers.Factory(
+        GetTaskUseCase,
         logger=logger,
         transaction_manager=transaction_manager,
     )
